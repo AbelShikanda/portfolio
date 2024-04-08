@@ -1,0 +1,16 @@
+<app-navbar></app-navbar>
+
+<div class="form-container">
+    <p style="text-align: center; font-size: 25px">Contactp
+    <form [formGroup]="userForm">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" formControlName="name">
+        <div *ngIf="userForm.get('name')?.hasError('required') && userForm.get('name').toutched">Name is required</div>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" formControlName="email">
+        <label for="message">Message</label>
+        <textarea name="message" id="message" cols="30" rows="4"></textarea>
+        <button (click)="onSubmit()">Submit</button>
+    </form>
+</div>
+<app-footer></app-footer>
